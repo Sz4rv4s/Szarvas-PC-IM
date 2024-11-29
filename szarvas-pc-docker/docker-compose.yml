@@ -1,18 +1,22 @@
 services:
-  mysql:
-    image: mysql:8.0
-    container_name: mysql
+  postgres:
+    image: postgres:16
+    container_name: postgres
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: keycloak
-      MYSQL_USER: keycloak
-      MYSQL_PASSWORD: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: keycloak
     ports:
-      - "3306:3306"
+      - "5432:5432"
     volumes:
-      - mysql-data:/var/lib/mysql
+      - postgres-data:/var/lib/postgresql/data:z
       - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U keycloak" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     networks:
       - docker-network
 
@@ -21,10 +25,16 @@ services:
     container_name: keycloak
     restart: unless-stopped
     environment:
-      DB: mysql
-      DB_USERNAME: keycloak
-      DB_PASSWORD: keycloak
-      DB_URL: jdbc:mysql://mysql:3306/keycloak
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres:5432/keycloak
+      KC_DB_USERNAME: keycloak
+      KC_DB_PASSWORD: password
+      KC_HOSTNAME: localhost
+      KC_HOSTNAME_STRICT: false
+      KC_HOSTNAME_STRICT_HTTPS: false
+      KC_LOG_LEVEL: info
+      KC_METRICS_ENABLED: true
+      KC_HEALTH_ENABLED: true
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
     ports:
@@ -32,12 +42,70 @@ services:
       - "8443:8443"
     command: ["start-dev"]
     depends_on:
-      - mysql
+      postgres:
+        condition: service_healthy
     networks:
       - docker-network
 
+#  eureka-service:
+#    image: eureka-service-image:latest
+#    container_name: eureka-service
+#    restart: unless-stopped
+#    build:
+#      context: eureka-service
+#      dockerfile: Dockerfile.eureka-service
+#    ports:
+#      - "8761:8761"
+#    networks:
+#      - docker-network
+#
+#  resources-service:
+#    image: resources-service-image:latest
+#    container_name: resources-service
+#    restart: unless-stopped
+#    environment:
+#      DB_URL: jdbc:postgresql://postgres:5432/szarvaspc
+#      EUREKA_SERVER: http://eureka-service:8761/eureka
+#      DB_USERNAME: keycloak
+#      DB_PASSWORD: password
+#    build:
+#      context: resources-service
+#      dockerfile: Dockerfile.resources-service
+#    ports:
+#      - "8081:8081"
+#    depends_on:
+#      postgres:
+#        condition: service_healthy
+#      eureka-service:
+#        condition: service_started
+#    networks:
+#      - docker-network
+#
+#  gateway-service:
+#    image: gateway-service-image:latest
+#    container_name: gateway-service
+#    restart: unless-stopped
+#    environment:
+#      ISSUER_URI: http://keycloak:8080/realms/szarvaspc
+#      EUREKA_SERVER: http://eureka-service:8761/eureka
+#    build:
+#      context: gateway-service
+#      dockerfile: Dockerfile.gateway-service
+#    ports:
+#      - "9763:9763"
+#    depends_on:
+#      keycloak:
+#        condition: service_started
+#      eureka-service:
+#        condition: service_started
+#      resources-service:
+#        condition: service_started
+#    networks:
+#      - docker-network
+
 volumes:
-  mysql-data:
+  postgres-data:
 
 networks:
   docker-network:
+    driver: bridge

@@ -1,23 +1,23 @@
-CREATE DATABASE IF NOT EXISTS szarvaspc;
+CREATE DATABASE szarvaspc;
 
-USE szarvaspc;
+\connect szarvaspc;
 
 CREATE TABLE IF NOT EXISTS warehouses (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     city VARCHAR(255),
     address VARCHAR(255),
     capacity INT
-) ENGINE=InnoDB;
+);
 
 CREATE TABLE IF NOT EXISTS parts (
-    id INT PRIMARY KEY NOT NULL,
+    id SERIAL PRIMARY KEY,
     model VARCHAR(60) NOT NULL,
     brand VARCHAR(30) NOT NULL,
     price INT NOT NULL,
     warehouse_id INT NOT NULL,
     CONSTRAINT parts_fk FOREIGN KEY (warehouse_id) REFERENCES warehouses (id)
-) ENGINE=InnoDB;
+);
 
 INSERT INTO warehouses (id, name, city, address, capacity) VALUES (1, 'Large Warehouse', 'Berlin', 'Alexanderplatz 15', 10000);
 INSERT INTO warehouses (id, name, city, address, capacity) VALUES (2, 'West Warehouse', 'Munich', 'Marienplatz 97', 6750);
@@ -56,7 +56,13 @@ INSERT INTO parts (id, model, brand, price, warehouse_id) VALUES (28, 'RTX 3050 
 INSERT INTO parts (id, model, brand, price, warehouse_id) VALUES (29, 'Core i9-11900KF', 'Intel', 447, 5);
 INSERT INTO parts (id, model, brand, price, warehouse_id) VALUES (30, 'Pure Base 500DX', 'be quiet!', 89, 4);
 
-CREATE USER IF NOT EXISTS 'api'@'%' IDENTIFIED BY 'api';
-GRANT ALL PRIVILEGES ON szarvaspc.* TO 'api'@'%';
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT FROM pg_catalog.pg_roles WHERE rolname = 'api'
+    ) THEN
+        CREATE ROLE api LOGIN PASSWORD 'api';
+    END IF;
+END $$;
 
-FLUSH PRIVILEGES;
+GRANT ALL PRIVILEGES ON DATABASE szarvaspc TO api;
