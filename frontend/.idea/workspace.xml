@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="807a231b-f8ea-47b8-95bf-4c8876204b20" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Dockerfile.eureka-service" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dockerfile.gateway-service" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dockerfile.resources-service" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../eureka-service/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../eureka-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../eureka-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../eureka-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../eureka-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../eureka-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../eureka-service/src/main/java/hu/szarvas/eureka_service/EurekaServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../eureka-service/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(root)/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/Navbar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/fonts/OpenSans-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/fonts/OpenSans-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/fonts/OpenSans-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/fonts/OpenSans-LightItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/fonts/OpenSans-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/fonts/OpenSans-Semibold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postcss.config.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gateway-service/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gateway-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gateway-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gateway-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gateway-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gateway-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gateway-service/src/main/java/hu/szarvas/gateway_service/GatewayServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gateway-service/src/main/java/hu/szarvas/gateway_service/KeycloakRealmRoleConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gateway-service/src/main/java/hu/szarvas/gateway_service/SecurityConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gateway-service/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/src/main/java/hu/szarvas/resources_service/ResourcesServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/src/main/java/hu/szarvas/resources_service/controller/RequestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/src/main/java/hu/szarvas/resources_service/dto/ApiResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/src/main/java/hu/szarvas/resources_service/dto/PartDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/src/main/java/hu/szarvas/resources_service/dto/PartWithWarehouseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/src/main/java/hu/szarvas/resources_service/dto/UpdatePartDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/src/main/java/hu/szarvas/resources_service/dto/UpdatePriceDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/src/main/java/hu/szarvas/resources_service/dto/WarehouseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/src/main/java/hu/szarvas/resources_service/dto/WarehouseWithPartsDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/src/main/java/hu/szarvas/resources_service/model/Part.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/src/main/java/hu/szarvas/resources_service/model/Warehouse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/src/main/java/hu/szarvas/resources_service/repository/PartsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/src/main/java/hu/szarvas/resources_service/repository/WarehousesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/src/main/java/hu/szarvas/resources_service/service/PartsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/src/main/java/hu/szarvas/resources_service/service/WarehousesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../szarvas-pc-docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../szarvas-pc-docker/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../szarvas-pc-docker/init-db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../szarvas-pc-docker/init-db.sql" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Sz4rv4s&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Sz4rv4s/Szarvas-PC-IM.git&quot;,
+    &quot;accountId&quot;: &quot;cc2ce9d8-64a1-4c92-80b2-f969fa675655&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2pTqesHVKAotttI6vkNgj74BTdM" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/pezarvas/Desktop/Development/Szarvas-PC-IM/frontend/app",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Users\\pezarvas\\Desktop\\Development\\Szarvas-PC-IM\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\pezarvas\Desktop\Development\Szarvas-PC-IM\frontend\app" />
+      <recent name="C:\Users\pezarvas\Desktop\Development\Szarvas-PC-IM\frontend\public" />
+      <recent name="C:\Users\pezarvas\Desktop\Development\Szarvas-PC-IM\frontend\app\fonts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pezarvas\Desktop\Development\Szarvas-PC-IM\frontend\app" />
+      <recent name="C:\Users\pezarvas\Desktop\Development\Szarvas-PC-IM\frontend\app\fonts" />
+      <recent name="C:\Users\pezarvas\Desktop\Development\Szarvas-PC-IM\frontend\app\(root)" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-WS-243.21565.180" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="807a231b-f8ea-47b8-95bf-4c8876204b20" name="Changes" comment="" />
+      <created>1732800517300</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732800517300</updated>
+      <workItem from="1732800522381" duration="7255000" />
+      <workItem from="1732862440977" duration="1772000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
