@@ -1,0 +1,76 @@
+package hu.szarvas.resources_service.service;
+
+import hu.szarvas.resources_service.dto.PartDTO;
+import hu.szarvas.resources_service.dto.WarehouseDTO;
+import hu.szarvas.resources_service.dto.WarehouseWithPartsDTO;
+import hu.szarvas.resources_service.model.Warehouse;
+import hu.szarvas.resources_service.repository.WarehousesRepository;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+public class WarehousesService {
+    private final WarehousesRepository warehousesRepository;
+
+    public WarehousesService(WarehousesRepository warehousesRepository) {
+        this.warehousesRepository = warehousesRepository;
+    }
+
+    public List<WarehouseDTO> getAllWarehouses() {
+        return warehousesRepository.findAll().stream()
+                .map(this::convertToWarehouseDTO)
+                .collect(Collectors.toList());
+    }
+
+    public List<WarehouseWithPartsDTO> getAllWarehousesWithParts() {
+        return warehousesRepository.findAll().stream()
+                .map(this::convertToWarehouseWithPartsDTO)
+                .collect(Collectors.toList());
+    }
+
+    public List<WarehouseWithPartsDTO> getPartsByWarehouseName(String name) {
+        return warehousesRepository.findByNameContainingIgnoreCase(name).stream()
+                .map(this::convertToWarehouseWithPartsDTO)
+                .collect(Collectors.toList());
+    }
+
+    public WarehouseWithPartsDTO getPartsByWarehouseId(Integer id) {
+        Warehouse warehouse = warehousesRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Warehouse not found"));
+
+        return convertToWarehouseWithPartsDTO(warehouse);
+    }
+
+    public WarehouseDTO convertToWarehouseDTO(Warehouse warehouse) {
+        return new WarehouseDTO(
+                warehouse.getId(),
+                warehouse.getName(),
+                warehouse.getCity(),
+                warehouse.getAddress(),
+                warehouse.getCapacity()
+        );
+    }
+    public WarehouseWithPartsDTO convertToWarehouseWithPartsDTO(Warehouse warehouse) {
+        List<PartDTO> parts = warehouse.getParts().stream()
+                .map(part -> new PartDTO(
+                        part.getId(),
+                        part.getModel(),
+                        part.getBrand(),
+                        part.getPrice()
+                ))
+                .collect(Collectors.toList());
+
+        return new WarehouseWithPartsDTO(
+                warehouse.getId(),
+                warehouse.getName(),
+                warehouse.getCity(),
+                warehouse.getAddress(),
+                warehouse.getCapacity(),
+                parts
+        );
+    }
+}

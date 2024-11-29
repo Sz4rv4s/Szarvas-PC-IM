@@ -1,0 +1,13 @@
+package hu.szarvas.resources_service.dto;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class UpdatePartDTO {
+    private String model;
+    private String brand;
+    private int price;
+    private int warehouseId;
+}
